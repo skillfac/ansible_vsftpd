@@ -1,0 +1,11 @@
+---
+# tasks file for my_vsftp_role
+
+- name: Install required system packages
+  apt: name=vsftpd state=latest update_cache=yes
+
+- name: Enable vsftpd service
+  service:
+    name: vsftpd.service
+    enabled: yes
+    state: started
